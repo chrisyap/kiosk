@@ -113,6 +113,7 @@ header {
     z-index: 10;
     .tabs {
       top: 95px;
+      width: 100%;
       position: fixed;
       @include transitions;
     }
@@ -150,6 +151,8 @@ header {
       }
     }
     > li {
+      display: table-cell;
+      width: 1%;
       &:last-child {
         > a {
           &:after {
