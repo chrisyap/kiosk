@@ -271,7 +271,10 @@ header {
         line-height: 45px;
         font-size: 3rem;
         border: 2px solid rgba(black,.1);
+        vertical-align: middle;
+        background-image: none;
         color: $text-color;
+        box-shadow: none;
         @include transitions;
         &.hide-content {
           color: transparent;
