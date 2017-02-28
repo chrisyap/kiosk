@@ -83,7 +83,16 @@ h1, h2, h3, h4, h5, h6 {
 header {
   background-color: $color-blue-light;
   @include transitions;
+  position: fixed;
   // border-top: 2px solid $text-color;
+  /* MAGIC HAPPENS HERE */
+  transform: translateZ(0);
+  -moz-transform: translatez(0);
+  -ms-transform: translatez(0);
+  -o-transform: translatez(0);
+  -webkit-transform: translateZ(0);
+  -webkit-font-smoothing: antialiased; /* seems to do the same in Safari */
+  height: 192px;
   .patient-name {
     line-height: .7;
     color: $text-color;
@@ -103,7 +112,6 @@ header {
     @include transitions;
   }
   &.affix-top {
-    position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
@@ -116,9 +124,10 @@ header {
     // top: -55px;
     width: 100%;
     z-index: 10;
+    height: calc(192px - 56px);
     .tabs {
       @include transitions;
-      transform: translateY(-55px);
+      transform: translateY(-56px);
     }
     .patient-name {
       opacity: 0;
