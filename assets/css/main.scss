@@ -33,10 +33,6 @@ body {
   font-family: 'Oxygen', sans-serif;
   font-weight: 300;
   color: #333;
-  &.affix {
-    padding-top: 95px;
-    position: static;
-  }
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
@@ -88,6 +84,13 @@ header {
   background-color: $color-blue-light;
   @include transitions;
   // border-top: 2px solid $text-color;
+  /* MAGIC HAPPENS HERE */
+  transform: translateZ(0);
+  -moz-transform: translatez(0);
+  -ms-transform: translatez(0);
+  -o-transform: translatez(0);
+  -webkit-transform: translateZ(0);
+  -webkit-font-smoothing: antialiased; /* seems to do the same in Safari */
   .patient-name {
     line-height: .7;
     color: $text-color;
