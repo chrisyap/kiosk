@@ -74,6 +74,7 @@ $('#form').on('show.bs.modal', function(e){
     $('#form').removeClass('slideInUp').removeClass('animated');
   },1200)
 })
+
 $('#language-selector').on('click', '.btn-english', function(e){
   $('#language-selector').addClass('slideOutDown animated');
   setTimeout(function(){
