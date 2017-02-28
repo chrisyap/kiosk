@@ -92,7 +92,7 @@ header {
   -o-transform: translatez(0);
   -webkit-transform: translateZ(0);
   -webkit-font-smoothing: antialiased; /* seems to do the same in Safari */
-  height: 192px;
+  min-height: 100px;
   .patient-name {
     line-height: .7;
     color: $text-color;
@@ -105,7 +105,7 @@ header {
   }
   .patient-name-sm {
     position: fixed;
-    top: 7px;
+    top: 63px;
     left: 25px;
     margin: 0;
     opacity: 0;
@@ -115,19 +115,21 @@ header {
     top: 0;
     width: 100%;
     z-index: 10;
+    transform: translate3d(0,0,0);
     .tabs {
       @include transitions;
-      transform: translateY(0);
+      // transform: translate3d(0,0,0);
     }
   }
   &.affix {
     // top: -55px;
     width: 100%;
     z-index: 10;
-    height: calc(192px - 56px);
+    // height: calc(192px - 56px);
+    transform: translate3d(0,-56px,0);
     .tabs {
       @include transitions;
-      transform: translateY(-56px);
+      // transform: translate3d(0,-56px,0);
     }
     .patient-name {
       opacity: 0;
