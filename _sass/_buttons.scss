@@ -1,0 +1,19 @@
+.btn {
+  border-radius: 2px;
+  font-weight: 300;
+  text-transform: uppercase;
+  &.btn-primary {
+    background-color: $color-blue-dark;
+    border-color: darken($color-blue-dark,5%);
+    color: $text-color;
+  }
+  &.btn-default {
+    background-color: transparent;
+    border-color: rgba(black, .5);
+  }
+  &.btn-default-reverse {
+    background-color: transparent;
+    border-color: rgba(white,.5);
+    color: white;
+  }
+}

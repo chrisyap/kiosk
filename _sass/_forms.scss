@@ -1,0 +1,199 @@
+.form-group {
+  position: relative;
+  margin: 0 0 20px;
+  label {
+    padding-left: 0;
+    font-weight: 300;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    sup {
+      color: $color-red;
+    }
+  }
+  .form-control {
+    font-size: 16px;
+    color: $color-gray-darkest;
+  }
+  &.has-error {
+    .form-control {
+      border-width: 0 0 1px;
+      border-bottom-color: $color-red !important;
+      box-shadow: 0 1px 0 transparent !important;
+      &:focus {
+        box-shadow: 0 1px 0 $color-red !important;
+      }
+    }
+    .help-text {
+      opacity: 1;
+      color: $color-red;
+    }
+  }
+  &.has-warning {
+    .form-control {
+      border-width: 0 0 1px;
+      border-bottom-color: $color-orange !important;
+      box-shadow: 0 1px 0 transparent !important;
+      &:focus {
+        box-shadow: 0 1px 0 $color-orange !important;
+      }
+    }
+    .help-text {
+      opacity: 1;
+      color: $color-orange;
+    }
+  }
+  &.select {
+    .form-control {
+
+    }
+  }
+  &.labelless {
+    .form-control {
+      position: relative;
+      background-color: transparent;
+      padding: 0 0 10px;
+      height: auto;
+      border-radius: 0;
+      border-bottom-color: rgba(black,.1);
+      border-width: 0 0 1px 0;
+      box-shadow: none;
+      @include transitions;
+      z-index: 1;
+      &:focus {
+        border-color: $color-blue-dark;
+        border-width: 0 0 1px 0;
+        box-shadow: 0 1px 0 $color-blue-dark;
+      }
+    }
+  }
+  &.radio, &.checkbox {
+    margin-bottom: 35px;
+    label {
+      display: block;
+      font-size: 12px;
+      color: rgba(black,.5);
+      margin: 0;
+    }
+    .btn-group {
+      margin-top: 3px;
+    }
+    .btn {
+      text-transform: uppercase;
+      font-size: 12px;
+      padding: 5px 10px 4px;
+      display: inline-block;
+      margin: 0 0 1px 0;
+      border: 0;
+      border-radius: 2px !important;
+      &.btn-success {
+        background-color: $color-green;
+        width: 100%;
+      }
+      &.btn-default {
+        background-color: transparent;
+        font-weight: 400;
+        box-shadow: none;
+        i {
+          margin-bottom: 0;
+        }
+        &.active {
+          background-color: rgba(black,.8);
+          color: white;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+  &.checkbox {
+    .btn {
+      margin-right: 3px;
+    }
+  }
+  &.add-another {
+    color: rgba($text-color,.5);
+    margin-bottom: 60px;
+    .icon {
+      font-size: 2rem;
+    }
+  }
+  &.floating-label, &.select {
+    .form-control {
+      position: relative;
+      background-color: transparent;
+      padding: 18px 0 8px;
+      height: 48px;
+      border-radius: 0;
+      border-color: rgba(black,.1);
+      border-width: 0 0 1px 0;
+      box-shadow: none;
+      @include transitions;
+      z-index: 1;
+      &:focus {
+        border-color: $color-blue-dark;
+        border-width: 0 0 1px 0;
+        box-shadow: 0 1px 0 $color-blue-dark;
+      }
+    }
+    label {
+      position: absolute;
+      top: 1.8rem;
+      color: rgba(black,.5);
+      z-index: 0;
+      @include transitions;
+    }
+    &.float {
+      label {
+        top: 0;
+        font-size: 12px;
+        color: rgba(black,.5);
+      }
+    }
+    &.help {
+      .help-text {
+        opacity: 1;
+      }
+    }
+  }
+  &.select {
+    margin-bottom: 43px;
+    &:before {
+      content: '\f35f';
+      position: absolute;
+      right: 0;
+      top: 15px;
+      font-family: "Ionicons";
+    }
+    label {
+      top: 0;
+      padding-left: 0;
+      font-size: 12px;
+      width: 100%;
+      color: rgba(black,.5);
+    }
+    .form-control {
+      border-radius: 0;
+      -webkit-appearance: none;
+      -moz-appearance:    none;
+      appearance:         none;
+    }
+  }
+  .help-text {
+    font-size: 12px;
+    color: rgba(black,.6);
+    opacity: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    margin: 6px 0;
+    display: block;
+    white-space: nowrap;
+    @include transitions;
+  }
+}
+
+.cta {
+  margin-top: 40px;
+}

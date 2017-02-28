@@ -1,0 +1,274 @@
+---
+# Front matter
+---
+
+@import
+  "bootstrap-sass/assets/stylesheets/bootstrap",
+  "variables",
+  "mixins",
+  "buttons",
+  "modals",
+  "forms";
+
+@mixin gradient($start-color, $end-color, $orientation) {
+  background: $start-color;
+  @if $orientation == 'vertical' {
+    background: -webkit-linear-gradient(top, $start-color, $end-color);
+    background: linear-gradient(to bottom, $start-color, $end-color);
+  } @else if $orientation == 'horizontal' {
+    background: -webkit-linear-gradient(left, $start-color, $end-color);
+    background: linear-gradient(to right, $start-color, $end-color);
+  } @else {
+    background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+    background: radial-gradient(ellipse at center, $start-color, $end-color);
+  }
+}
+html {
+  // background-color: $color-blue-dark;
+}
+body {
+  background-color: #fff;
+  // background-color: #555555;
+  // font-family: 'Roboto', sans-serif;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 300;
+  color: #333;
+  &.affix {
+    padding-top: 95px;
+    position: static;
+  }
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+  small {
+    font-weight: 300;
+    color: rgba(black,.4);
+  }
+}
+.lead {
+  font-size: 16px;
+}
+.navbar {
+  height: 50px;
+  background-color: $color-blue-dark;
+  border-bottom: none;
+  margin-bottom: 0;
+  .icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+  .navbar-brand {
+    color: $text-color;
+  }
+  .nav {
+    >li {
+      > a {
+        color: $text-color;
+      }
+    }
+  }
+}
+.btn-nav {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 0px;
+  right: 0;
+  line-height: 30px;
+  background-color: rgba(black,.8);
+  color: white;
+  font-size: 3rem;
+  z-index: 1060;
+  img {
+    height: 20px;
+  }
+}
+header {
+  background-color: $color-blue-light;
+  @include transitions;
+  // border-top: 2px solid $text-color;
+  .patient-name {
+    line-height: .7;
+    color: $text-color;
+    margin-bottom: 20px;
+    @include transitions;
+    opacity: 1;
+    small {
+      color: $text-color;
+    }
+  }
+  .patient-name-sm {
+    position: fixed;
+    top: 7px;
+    left: 25px;
+    margin: 0;
+    opacity: 0;
+    @include transitions;
+  }
+  &.affix-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    .tabs {
+      top: 95px;
+      position: fixed;
+      @include transitions;
+    }
+  }
+  &.affix {
+    top: -55px;
+    width: 100%;
+    z-index: 10;
+    .tabs {
+      top: 40px;
+      position: fixed;
+      @include transitions;
+    }
+    .patient-name {
+      opacity: 0;
+      position: static;
+    }
+    .patient-name-sm {
+      opacity: 1;
+    }
+  }
+  .nav {
+    margin-left: -15px;
+    margin-right: -15px;
+    width: calc(100% + 30px);
+    // border-top: 1px solid rgba(white, .5);
+    @for $i from 1 through 4 {
+      > li:nth-child(#{$i}){
+        > a {
+          background-color: darken(#eee, 5% + ($i * 2));
+          &:after {
+            border-color: transparent transparent transparent darken(#eee, 5% + ($i * 2));
+          }
+        }
+      }
+    }
+    > li {
+      &:last-child {
+        > a {
+          &:after {
+            content: none;
+          }
+        }
+      }
+      > a {
+        padding-top: 25px;
+        line-height: 1;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: rgba(black,.8);
+        // @include gradient(#dedede, #d5d5d5, horizontal);
+        &:after {
+          content: '';
+          position: absolute;
+          right: -8px;
+          top: 22px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 8px 0 8px 8px;
+          z-index: 1;
+        }
+        .icon {
+          font-size: 48px;
+          opacity: .1;
+        }
+      }
+      &.passed {
+        .icon {
+          opacity: 1;
+          color: $color-green;
+        }
+      }
+      &.active {
+        > a {
+          background: none;
+          background-color: $color-blue-light;
+          &:after {
+            border-color: transparent transparent transparent $color-blue-light;
+          }
+        }
+      }
+    }
+  }
+}
+
+.body {
+  margin-top: 190px;
+  padding: 40px 0 80px;
+}
+
+.backtotop {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  color: rgba(white,.5);
+  background-color: rgba(black,.2);
+  transform: translateY(-50%);
+  opacity: 0;
+  @include transitions;
+  &:focus {
+    color: $text-color;
+  }
+  &.affix {
+    opacity: 1;
+  }
+}
+
+.home {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: $color-gray;
+  .tophalf {
+    position: relative;
+    background-color: $color-blue-light;
+    height: 33%;
+    width: 100%;
+    > .container {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .title {
+      small {
+        display: block;
+      }
+    }
+  }
+  .bottomhalf {
+    padding: 40px 0;
+    color: #fff;
+    .codes {
+      margin: 20px 0 30px;
+      .code-input {
+        width: 60px;
+        height: 60px;
+        margin: 0 2px;
+        background-color: #fff;
+        display: inline-block;
+        border-radius: 20%;
+        font-weight: 300;
+        line-height: 55px;
+        font-size: 3rem;
+        border: 2px solid rgba(black,.1);
+        color: $text-color;
+        @include transitions;
+        &.hide-content {
+          color: transparent;
+        }
+      }
+    }
+  }
+}
