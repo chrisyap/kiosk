@@ -237,9 +237,13 @@ header {
     width: 100%;
     > .container {
       position: absolute;
-      bottom: 40px;
+      bottom: 20px;
       left: 50%;
+      width: 100%;
       transform: translateX(-50%);
+      @media (min-width: 768px) {
+        bottom: 40px;
+      }
     }
     .title {
       small {
@@ -253,9 +257,9 @@ header {
     .codes {
       margin: 20px 0 30px;
       .code-input {
-        width: 60px;
-        height: 60px;
-        margin: 0 2px;
+        width: 50px;
+        height: 50px;
+        margin: 0 1px;
         background-color: #fff;
         display: inline-block;
         border-radius: 20%;
@@ -267,6 +271,11 @@ header {
         @include transitions;
         &.hide-content {
           color: transparent;
+        }
+        @media (min-width: 768px) {
+          width: 60px;
+          height: 60px;
+          line-height: 55px;
         }
       }
     }
