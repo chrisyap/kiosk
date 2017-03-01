@@ -36,14 +36,14 @@ $('.checkbox').on('click','.btn',function(){
   btn.toggleClass('active');
 })
 
-// $('.modal').scroll(function(){
-//   var scrollAmount = $('.modal').scrollTop();
-//   if (scrollAmount >= 55) {
-//     $('#form').find('[data-spy=affix]').addClass('affix').removeClass('affix-top');
-//   } else {
-//     $('#form').find('[data-spy=affix]').removeClass('affix').addClass('affix-top');
-//   }
-// })
+$('.modal .body').scroll(function(){
+  var scrollAmount = $('.modal .body').scrollTop();
+  if (scrollAmount >= 55) {
+    $('#form').find('[data-spy=affix]').addClass('affix').removeClass('affix-top');
+  } else {
+    $('#form').find('[data-spy=affix]').removeClass('affix').addClass('affix-top');
+  }
+})
 
 $('.btnNext').click(function(){
   $('.nav > .active').next('li').find('a').trigger('click');
