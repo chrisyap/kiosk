@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
 header {
   background-color: $color-blue-light;
   @include transitions;
-  position: sticky;
+  position: fixed;
   // border-top: 2px solid $text-color;
   /* MAGIC HAPPENS HERE */
   // transform: translateZ(0);
