@@ -227,6 +227,10 @@ header {
   width: 100%;
   top: 0;
   bottom: 0;
+  @include transitions;
+  &.affix {
+    margin-top: 135px;
+  }
 }
 
 .backtotop {
