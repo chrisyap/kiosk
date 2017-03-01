@@ -219,8 +219,8 @@ header {
 
 .body {
   background-color: #fff;
-  margin-top: 190px;
-  padding: 40px 0 80px;
+  // margin-top: 135px;
+  padding: 240px 0 80px;
   overflow-x: hidden;
   overflow-y: scroll;
   position: fixed;
@@ -230,7 +230,7 @@ header {
   @include transitions;
   -webkit-overflow-scrolling: touch;
   &.affix {
-    margin-top: 135px;
+    // margin-top: 135px;
   }
 }
 
