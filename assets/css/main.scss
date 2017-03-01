@@ -228,6 +228,7 @@ header {
   top: 0;
   bottom: 0;
   @include transitions;
+  -webkit-overflow-scrolling: touch;
   &.affix {
     margin-top: 135px;
   }
