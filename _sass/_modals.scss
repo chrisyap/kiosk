@@ -1,5 +1,6 @@
 .modal {
-  position: absolute;
+  // position: absolute;
+  transform: translate3d(0,0,0);
   &.fullscreen {
     -webkit-overflow-scrolling: touch;
     background-color: #fff;
