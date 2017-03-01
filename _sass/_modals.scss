@@ -1,6 +1,5 @@
 .modal {
   // position: absolute;
-  transform: translate3d(0,0,0);
   &.fullscreen {
     -webkit-overflow-scrolling: touch;
     background-color: #fff;
@@ -8,6 +7,10 @@
     -moz-animation-duration: .8s;
     -ms-animation-duration: .8s;
     animation-duration: .8s;
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    overflow: hidden;
     &.fade {
       opacity: 1;
     }

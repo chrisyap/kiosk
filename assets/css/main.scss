@@ -92,6 +92,9 @@ header {
   // -o-transform: translatez(0);
   // -webkit-transform: translateZ(0);
   -webkit-font-smoothing: antialiased; /* seems to do the same in Safari */
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   min-height: 100px;
   .patient-name {
     line-height: .7;
@@ -218,6 +221,12 @@ header {
   background-color: #fff;
   margin-top: 190px;
   padding: 40px 0 80px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
 }
 
 .backtotop {
