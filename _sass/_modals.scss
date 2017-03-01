@@ -1,11 +1,11 @@
 .modal {
   &.fullscreen {
+    -webkit-overflow-scrolling: touch;
     background-color: #fff;
     -webkit-animation-duration: .8s;
     -moz-animation-duration: .8s;
     -ms-animation-duration: .8s;
     animation-duration: .8s;
-    -webkit-overflow-scrolling: touch;
     &.fade {
       opacity: 1;
     }
